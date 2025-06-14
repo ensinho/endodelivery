@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Emanuelle Beserra - Endo Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-dark-plum: #5E2766; /* Roxo escuro para "ENDO" e textos principais */
+            --color-medium-pink: #E0709C; /* Rosa médio para "Delivery" e acentos */
+            --color-light-purple: #D9BEE0; /* Roxo claro para círculos */
+            --color-very-light-pink: #F2E4E8; /* Rosa muito claro para círculos */
+            --color-white: #FFFFFF; /* Fundo principal */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-dark-plum);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .font-dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .main-card {
+            position: relative;
+            width: 100%;
+            max-width: 420px; 
+            background-color: var(--color-white);
+            border-radius: 1.5rem; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+            overflow: hidden;
+        }
+
+        .header-section {
+            position: relative;
+            height: 530px; 
+            background-color: var(--color-white);
+            padding-top: 3rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 10; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-endo {
+            font-size: 6rem; 
+            font-weight: 700;
+            color: var(--color-dark-plum);
+            line-height: 0.8; 
+            letter-spacing: 0.2em; 
+            margin-top: 2rem;
+        }
+
+        .logo-delivery {
+            font-size: 7rem; 
+            color: var(--color-medium-pink);
+            position: relative;
+            top: -2rem;
+        }
+
+        .clinic-info {
+            font-size: 1.25rem;
+            color: var(--color-dark-plum);
+            letter-spacing: 0.1em;
+            margin-top: -1.5rem;
+        }
+
+        .dr-info {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.75rem;
+            color: var(--color-dark-plum);
+            margin-top: 2rem;
+        }
+
+        .cro-info {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--color-dark-plum);
+            margin-top: 0.5rem;
+        }
+
+        .slogan {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-dark-plum);
+            letter-spacing: 0.1em;
+            line-height: 1.5; 
+            text-transform: uppercase;
+            padding: 0 1rem; 
+            box-sizing: border-box; 
+        }
+
+        .svg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+        }
+
+        .tooth-icon-container {
+            position: absolute;
+            bottom: 60px; 
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .divider-bar {
+            background-color: var(--color-light-purple);
+            height: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 2rem 0; 
+        }
+        .divider-circle {
+            background-color: var(--color-dark-plum);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .divider-circle.left { left: 1rem; }
+        .divider-circle.right { right: 1rem; }
+
+
+        .content-section {
+            padding: 2rem;
+            background-color: var(--color-white);
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--color-dark-plum);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4A4A4A;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: #4A4A4A;
+        }
+
+        .feature-list li span {
+            color: var(--color-medium-pink);
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-dark-plum);
+            transition: color 0.3s ease;
+        }
+        .contact-item:hover {
+            color: var(--color-medium-pink);
+        }
+
+        .pdf-button-container {
+            text-align: center;
+            margin-top: 2rem;
+            padding-bottom: 2rem; 
+        }
+
+        .pdf-button {
+            display: inline-block;
+            background-color: var(--color-medium-pink);
+            color: var(--color-white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+            transition: all 0.3s ease;
+            text-decoration: none; 
+        }
+
+        .pdf-button:hover {
+            background-color: var(--color-dark-plum); 
+            transform: scale(1.05);
+        }
+
+
+        @media (max-width: 640px) {
+            .logo-endo { font-size: 4rem; }
+            .logo-delivery { font-size: 5rem; top: -1.5rem; }
+            .clinic-info { font-size: 1rem; margin-top: -1rem; }
+            .dr-info { font-size: 1.5rem; }
+            .slogan { font-size: 0.9rem; } 
+            .header-section { height: 450px; padding-top: 2rem; }
+            .section-title { font-size: 2.5rem; }
+            .text-content { font-size: 0.95rem; }
+            .feature-list li { font-size: 0.9rem; }
+            .contact-item { font-size: 1rem; }
+            .pdf-button { font-size: 1rem; padding: 0.7rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-card">
+        <div class="header-section">
+            <div class="svg-container">
+                <svg width="100%" height="100%" viewBox="0 0 420 530" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="280" cy="300" r="80" fill="var(--color-light-purple)" opacity="0.6"/>
+                    <circle cx="100" cy="350" r="60" fill="var(--color-very-light-pink)" opacity="0.7"/>
+                    <circle cx="350" cy="150" r="40" fill="var(--color-very-light-pink)" opacity="0.5"/>
+                    <path d="M50 180 C100 100, 250 80, 350 150" stroke="var(--color-light-purple)" stroke-width="2" fill="none" opacity="0.7"/>
+                    <path d="M30 220 C80 150, 200 130, 320 180" stroke="var(--color-light-purple)" stroke-width="2" fill="none" opacity="0.7"/>
+                    <path d="M40 200 C90 130, 220 110, 340 160" stroke="var(--color-medium-pink)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <polygon points="55,20 65,40 85,45 65,50 55,70 45,50 25,45 45,40" fill="var(--color-medium-pink)" opacity="0.8" transform="translate(100 100) scale(0.6)"/>
+                </svg>
+            </div>
+
+            <div class="header-content">
+                <div class="logo-endo">ENDO</div>
+                <div class="logo-delivery font-dancing-script">Delivery</div>
+                <p class="clinic-info">ATENDIMENTOS EM CONSULTÓRIO</p>
+
+                <p class="dr-info">Dra. Emanuelle Beserra - Pós-Endodontia</p>
+                <p class="cro-info">CRO: 16469</p>
+
+                <p class="slogan">TRATAMENTOS ENDODÔNTICOS COM EXCELÊNCIA, ONDE VOCÊ ESTIVER</p>
+            </div>
+
+            <div class="tooth-icon-container">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15" y="60" width="70" height="20" rx="8" fill="var(--color-medium-pink)"/>
+                    <circle cx="50" cy="70" r="10" fill="var(--color-very-light-pink)" opacity="0.4"/>
+                    <circle cx="35" cy="70" r="5" fill="var(--color-light-purple)" opacity="0.6"/>
+                    <circle cx="65" cy="70" r="5" fill="var(--color-light-purple)" opacity="0.6"/>
+                    <path d="M50 15 C40 15 30 25 30 40 V60 C30 65 35 70 40 70 H60 C65 70 70 65 70 60 V40 C70 25 60 15 50 15 Z" fill="var(--color-white)" stroke="var(--color-medium-pink)" stroke-width="4"/>
+                    <path d="M40 70 V85 C40 90 45 90 50 85 V70" stroke="var(--color-medium-pink)" stroke-width="4" fill="none"/>
+                    <path d="M60 70 V85 C60 90 55 90 50 85 V70" stroke="var(--color-medium-pink)" stroke-width="4" fill="none"/>
+                    <rect x="47" y="5" width="6" height="15" rx="3" fill="var(--color-medium-pink)"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="divider-bar">
+            <div class="divider-circle left"></div>
+            <div class="divider-circle right"></div>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">Apresentação</h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                <img src="https://placehold.co/150x150/F2E4E8/5E2766?text=Dra.%20Emanuelle" alt="Foto da Dra. Emanuelle Beserra" class="w-36 h-36 rounded-full object-cover border-4 border-medium-pink shadow-md flex-shrink-0">
+                <div class="text-center md:text-left flex-grow">
+                    <p class="text-content">
+                        <span class="font-bold text-dark-plum">EMANUELLE Beserra</span> é Cirurgiã-Dentista formada pela Universidade de Fortaleza (UNIFOR) e atualmente pós-graduanda em Endodontia.
+                    </p>
+                    <p class="text-content italic">
+                        "Também atuo nas áreas de Dentística e Cirurgia Oral, com foco em Endodontia Menor, retratamentos e uso de técnicas modernas."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider-bar">
+            <div class="divider-circle left"></div>
+            <div class="divider-circle right"></div>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">O que é Endo Delivery?</h2>
+            <p class="text-content text-center">
+                É a Endodontia no seu consultório. Você agenda, e eu realizo o tratamento endodôntico do seu paciente no seu espaço com toda a estrutura e arsenal necessários.
+            </p>
+            <ul class="feature-list">
+                <li><span role="img" aria-label="ícone de brilho">✨</span> Motor endodôntico</li>
+                <li><span role="img" aria-label="ícone de brilho">✨</span> Localizador apical</li>
+                <li><span role="img" aria-label="ícone de brilho">✨</span> Radiografias pré, trans e pós-operatórias</li>
+                <li><span role="img" aria-label="ícone de brilho">✨</span> Limas manuais e mecanizadas</li>
+                <li><span role="img" aria-label="ícone de brilho">✨</span> Kit de exame clínico</li>
+                <li><span role="img" aria-label="ícone de brilho">✨</span> Desobstrução de condutos para pinos</li>
+            </ul>
+        </section>
+
+        <div class="divider-bar">
+            <div class="divider-circle left"></div>
+            <div class="divider-circle right"></div>
+        </div>
+
+        <section class="content-section text-center">
+            <h2 class="section-title">Contatos</h2>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="tel:+5588999675768" class="contact-item">
+                    <span role="img" aria-label="ícone de telefone">📞</span> (88) 9 9967-5768
+                </a>
+                <a href="https://www.instagram.com/dra.emanuellebeserra" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <span role="img" aria-label="ícone de câmera">📸</span> @dra.emanuellebeserra
+                </a>
+                <a href="mailto:mmanubesl@gmail.com" class="contact-item">
+                    <span role="img" aria-label="ícone de envelope">✉️</span> mmanubesl@gmail.com
+                </a>
+            </div>
+        </section>
+
+        <div class="pdf-button-container">
+            <a href="seu-caminho-para-o-pdf/CARD_ENDO_DELIVERY.pdf" target="_blank" rel="noopener noreferrer" class="pdf-button">
+                Ver Meu Cartão Completo (PDF)
+            </a>
+          
+        </div>
+    </div>
+</body>
+</html>
